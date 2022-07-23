@@ -51,6 +51,10 @@
 }
 .faq__dropdown {
     padding: 0 100px 18px 33px;
+    font-family: 'IBM Plex Sans';
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 29px;
 }
 .faq__item:not(.faq__item_show) .faq__answer {
     display: none;
@@ -77,5 +81,7 @@
     }
     .faq__dropdown {
         padding: 0 10px 10px;
+        font-size: 14px;
+        line-height: 18px;
     }
 }
