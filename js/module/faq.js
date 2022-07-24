@@ -40,14 +40,24 @@ const show = (elem, answer) => {
 
 export const accordeon = () => {
     const list = document.querySelector('.faq__list');
+    const faqItems = document.querySelectorAll('.faq__item');
 
     list.addEventListener('click', e => {
         const button = e.target.closest('.faq__question');
 
         if (button) {
             const item = button.closest('.faq__item');
-            const answer = item.querySelector('.faq__answer');
-            item.classList.contains('faq__item_show') ? hide(item, answer) : show(item, answer);
+
+            faqItems.forEach((faqItem, i) => {
+                const answer = faqItem.querySelector('.faq__answer');
+                if (item === faqItem) {
+                    faqItem.classList.contains('faq__item_show') ? hide(faqItem, answer) : show(faqItem, answer);
+                } else {
+                    hide(faqItem, answer);
+                }
+            });
+            
+            
         }
     });
 };
